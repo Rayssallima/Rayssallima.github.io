@@ -1,1328 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Rayssa Lima | Cibersegurança & Tecnologia</title>
-
-    <meta name="description"
-          content="Portfólio profissional de Rayssa Lima, estudante de Análise e Desenvolvimento de Sistemas com foco em Cibersegurança, Redes e Segurança da Informação.">
-
-    <style>
-
-        /* =========================
-           CONFIGURAÇÕES GERAIS
-        ========================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b1120;
-            color: #e5e7eb;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-
-        /* =========================
-           MENU
-        ========================== */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(11, 17, 32, 0.95);
-            border-bottom: 1px solid #1f2937;
-            backdrop-filter: blur(10px);
-        }
-
-        nav {
-            min-height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .logo span {
-            color: #38bdf8;
-        }
-
-        .menu {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .menu a {
-            color: #cbd5e1;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            color: #38bdf8;
-        }
-
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            background:
-                radial-gradient(circle at top right, rgba(56,189,248,0.12), transparent 35%),
-                radial-gradient(circle at bottom left, rgba(99,102,241,0.10), transparent 30%);
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 8px 15px;
-            border: 1px solid #334155;
-            border-radius: 30px;
-            color: #38bdf8;
-            font-size: 14px;
-            margin-bottom: 25px;
-            background: #111827;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1.05;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #38bdf8;
-        }
-
-        .hero h2 {
-            font-size: clamp(20px, 3vw, 30px);
-            font-weight: 400;
-            color: #cbd5e1;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            max-width: 700px;
-            font-size: 18px;
-            color: #94a3b8;
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 23px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #38bdf8;
-            color: #07111f;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
-        }
-
-        .btn-secondary {
-            border: 1px solid #475569;
-            color: #ffffff;
-        }
-
-        .btn-secondary:hover {
-            border-color: #38bdf8;
-            color: #38bdf8;
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           SEÇÕES
-        ========================== */
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            margin-bottom: 50px;
-        }
-
-        .section-title small {
-            color: #38bdf8;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .section-title h2 {
-            font-size: 38px;
-            color: #ffffff;
-            margin-top: 8px;
-        }
-
-        .section-title p {
-            color: #94a3b8;
-            max-width: 700px;
-            margin-top: 10px;
-        }
-
-
-        /* =========================
-           SOBRE
-        ========================== */
-
-        .about {
-            background: #0f172a;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .about-card {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            padding: 35px;
-        }
-
-        .about-card p {
-            color: #cbd5e1;
-            margin-bottom: 18px;
-        }
-
-        .highlight {
-            color: #38bdf8;
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           HABILIDADES
-        ========================== */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .skill-card {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 25px;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-
-        .skill-icon {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .skill-card h3 {
-            color: #ffffff;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .skill-card p {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           PROJETOS
-        ========================== */
-
-        .projects {
-            background: #0f172a;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .project-card {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-
-        .project-number {
-            color: #38bdf8;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .project-card h3 {
-            color: #ffffff;
-            font-size: 22px;
-            margin: 12px 0;
-        }
-
-        .project-card p {
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-
-        .status {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: #172033;
-            color: #38bdf8;
-            font-size: 12px;
-        }
-
-
-        /* =========================
-           FORMAÇÃO
-        ========================== */
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .education-card {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            padding: 30px;
-        }
-
-        .education-card h3 {
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .education-card .date {
-            color: #38bdf8;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .education-card p {
-            color: #94a3b8;
-        }
-
-
-        /* =========================
-           CERTIFICAÇÕES
-        ========================== */
-
-        .certifications {
-            background: #0f172a;
-        }
-
-        .cert-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .cert-item {
-            background: #111827;
-            border: 1px solid #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            color: #cbd5e1;
-        }
-
-        .cert-item strong {
-            color: #ffffff;
-        }
-
-
-        /* =========================
-           EXPERIÊNCIA
-        ========================== */
-
-        .experience-card {
-            border-left: 3px solid #38bdf8;
-            padding: 25px 30px;
-            margin-bottom: 25px;
-            background: #111827;
-            border-radius: 0 12px 12px 0;
-        }
-
-        .experience-card h3 {
-            color: #ffffff;
-            font-size: 21px;
-        }
-
-        .experience-card .company {
-            color: #38bdf8;
-            margin: 5px 0 15px;
-        }
-
-        .experience-card ul {
-            padding-left: 20px;
-            color: #94a3b8;
-        }
-
-        .experience-card li {
-            margin-bottom: 7px;
-        }
-
-
-        /* =========================
-           CONTATO
-        ========================== */
-
-        .contact {
-            background:
-                radial-gradient(circle at center, rgba(56,189,248,0.10), transparent 45%);
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .contact-content p {
-            color: #94a3b8;
-            margin-bottom: 30px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .contact-link {
-            border: 1px solid #334155;
-            padding: 12px 20px;
-            border-radius: 8px;
-            color: #ffffff;
-            transition: 0.3s;
-        }
-
-        .contact-link:hover {
-            border-color: #38bdf8;
-            color: #38bdf8;
-        }
-
-
-        /* =========================
-           RODAPÉ
-        ========================== */
-
-        footer {
-            border-top: 1px solid #1e293b;
-            text-align: center;
-            padding: 30px 20px;
-            color: #64748b;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           RESPONSIVIDADE
-        ========================== */
-
-        @media (max-width: 850px) {
-
-            .menu {
-                gap: 15px;
-            }
-
-            .about-grid,
-            .education-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            header {
-                position: relative;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 15px;
-                padding: 20px 0;
-            }
-
-            .menu {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 100px 0;
-            }
-
-            section {
-                padding: 70px 0;
-            }
-
-            .skills-grid,
-            .cert-list {
-                grid-template-columns: 1fr;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .section-title h2 {
-                font-size: 30px;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rayssa Lima | Cibersegurança & Tecnologia</title>
+<meta name="description" content="Portfólio de Rayssa Lima, estudante de Análise e Desenvolvimento de Sistemas com foco em Cibersegurança, Redes e Segurança da Informação.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#0b1120;color:#e5e7eb;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}.container{width:90%;max-width:1100px;margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(11,17,32,.94);border-bottom:1px solid #1f2937;backdrop-filter:blur(12px)}
+nav{min-height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:bold;color:#fff}.logo span{color:#38bdf8}
+.menu{display:flex;gap:22px;list-style:none}.menu a{color:#cbd5e1;font-size:14px;transition:.3s}.menu a:hover{color:#38bdf8}
+.hero{min-height:90vh;display:flex;align-items:center;background:radial-gradient(circle at 85% 20%,rgba(56,189,248,.14),transparent 30%),radial-gradient(circle at 10% 90%,rgba(99,102,241,.10),transparent 30%)}
+.hero-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}.hero-content{max-width:760px}
+.tag{display:inline-block;padding:8px 15px;border:1px solid #334155;border-radius:30px;color:#38bdf8;font-size:13px;margin-bottom:25px;background:#111827}
+.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.05;color:#fff;margin-bottom:20px}.hero h1 span{color:#38bdf8}
+.hero h2{font-size:clamp(20px,3vw,30px);font-weight:400;color:#cbd5e1;margin-bottom:25px}
+.hero p{max-width:700px;font-size:18px;color:#94a3b8;margin-bottom:30px}.hero-note{margin-top:22px;color:#64748b;font-size:14px}
+.buttons{display:flex;flex-wrap:wrap;gap:15px}.btn{display:inline-block;padding:13px 23px;border-radius:8px;font-weight:bold;transition:.3s}
+.btn-primary{background:#38bdf8;color:#07111f}.btn-primary:hover{transform:translateY(-3px);opacity:.9}
+.btn-secondary{border:1px solid #475569;color:#fff}.btn-secondary:hover{border-color:#38bdf8;color:#38bdf8;transform:translateY(-3px)}
+.hero-photo{position:relative;justify-self:center;width:min(330px,100%)}.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:24px;border:1px solid #334155;box-shadow:0 25px 80px rgba(0,0,0,.35)}
+.hero-photo:after{content:"Construindo minha carreira em Cibersegurança";position:absolute;bottom:-18px;left:18px;right:18px;padding:12px 15px;border:1px solid #334155;border-radius:12px;background:rgba(17,24,39,.95);color:#cbd5e1;font-size:12px;text-align:center}
+section{padding:100px 0}.section-title{margin-bottom:50px}.section-title small{color:#38bdf8;font-weight:bold;text-transform:uppercase;letter-spacing:2px}
+.section-title h2{font-size:38px;color:#fff;margin-top:8px}.section-title p{color:#94a3b8;max-width:700px;margin-top:10px}
+.about{background:#0f172a}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:stretch}
+.about-photo{min-height:420px;overflow:hidden;border-radius:18px;border:1px solid #1e293b;background:#111827}.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s}.about-photo:hover img{transform:scale(1.04)}
+.about-card{background:#111827;border:1px solid #1e293b;border-radius:14px;padding:35px}.about-card p{color:#cbd5e1;margin-bottom:18px}.highlight{color:#38bdf8;font-weight:bold}
+.about-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.mini-card{padding:16px;border:1px solid #1e293b;border-radius:10px;background:#0b1120}.mini-card strong{display:block;color:#fff;font-size:14px}.mini-card span{color:#64748b;font-size:12px}
+.timeline{position:relative;max-width:900px;margin:auto}.timeline:before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:#1e293b}
+.timeline-item{position:relative;padding:0 0 35px 55px}.timeline-dot{position:absolute;left:8px;top:4px;width:22px;height:22px;border-radius:50%;background:#0b1120;border:2px solid #38bdf8}
+.timeline-card{background:#111827;border:1px solid #1e293b;border-radius:14px;padding:22px 25px;transition:.3s}.timeline-card:hover{transform:translateX(5px);border-color:#38bdf8}
+.timeline-card .year{color:#38bdf8;font-size:13px;font-weight:bold}.timeline-card h3{color:#fff;margin:5px 0}.timeline-card p{color:#94a3b8;font-size:14px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.skill-card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:25px;transition:.3s}
+.skill-card:hover{transform:translateY(-7px);border-color:#38bdf8;box-shadow:0 15px 35px rgba(0,0,0,.2)}.skill-icon{font-size:28px;margin-bottom:15px}.skill-card h3{color:#fff;font-size:18px;margin-bottom:8px}.skill-card p{color:#94a3b8;font-size:14px}
+.projects{background:#0f172a}.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.project-card{overflow:hidden;background:#111827;border:1px solid #1e293b;border-radius:14px;transition:.3s}
+.project-card:hover{transform:translateY(-6px);border-color:#38bdf8;box-shadow:0 18px 45px rgba(0,0,0,.22)}.project-image{width:100%;height:230px;object-fit:cover;display:block;transition:transform .5s}.project-card:hover .project-image{transform:scale(1.03)}
+.project-body{padding:28px}.project-number{color:#38bdf8;font-size:13px;font-weight:bold}.project-card h3{color:#fff;font-size:22px;margin:10px 0}.project-card p{color:#94a3b8;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}.tech-tag{padding:5px 9px;border:1px solid #334155;border-radius:20px;color:#cbd5e1;font-size:11px}
+.status{display:inline-block;padding:6px 12px;border-radius:20px;background:#172033;color:#38bdf8;font-size:12px}.project-link{display:inline-block;margin-left:8px;color:#fff;font-size:13px;border-bottom:1px solid #38bdf8}
+.gallery-intro{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-bottom:25px}.gallery-text{padding:28px;border:1px solid #1e293b;border-radius:14px;background:#111827}.gallery-text p{color:#94a3b8}
+.gallery{display:grid;grid-template-columns:1.25fr .75fr;grid-template-rows:220px 220px;gap:15px}.gallery-item{position:relative;overflow:hidden;border-radius:14px;border:1px solid #1e293b;cursor:pointer;background:#111827}.gallery-item:first-child{grid-row:1/3}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .5s}.gallery-item:hover img{transform:scale(1.05);filter:brightness(.7)}
+.gallery-caption{position:absolute;left:0;right:0;bottom:0;padding:35px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.9));color:#fff;font-weight:bold}
+.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.education-card{background:#111827;border:1px solid #1e293b;border-radius:14px;padding:30px;transition:.3s}
+.education-card:hover{border-color:#38bdf8;transform:translateY(-4px)}.education-card h3{color:#fff;margin-bottom:8px}.education-card .date{color:#38bdf8;font-size:14px;margin-bottom:15px}.education-card p{color:#94a3b8}
+.certifications{background:#0f172a}.cert-list{display:grid;grid-template-columns:1fr 1fr;gap:15px}.cert-item{background:#111827;border:1px solid #1e293b;padding:20px;border-radius:10px;color:#cbd5e1;transition:.3s}.cert-item:hover{border-color:#38bdf8;transform:translateY(-3px)}.cert-item strong{color:#fff}
+.now{background:radial-gradient(circle at center,rgba(56,189,248,.08),transparent 45%)}.now-card{max-width:900px;margin:auto;padding:35px;border:1px solid #1e293b;border-radius:16px;background:#111827}
+.now-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:25px}.now-item{padding:18px;border-radius:10px;background:#0b1120;border:1px solid #1e293b}.now-item strong{color:#fff}.now-item p{color:#64748b;font-size:13px;margin-top:5px}
+.contact{background:radial-gradient(circle at center,rgba(56,189,248,.10),transparent 45%);text-align:center}.contact-content{max-width:700px;margin:auto}.contact-content p{color:#94a3b8;margin-bottom:30px}
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:15px}.contact-link{border:1px solid #334155;padding:12px 20px;border-radius:8px;color:#fff;transition:.3s}.contact-link:hover{border-color:#38bdf8;color:#38bdf8;transform:translateY(-3px)}
+footer{border-top:1px solid #1e293b;text-align:center;padding:30px 20px;color:#64748b;font-size:14px}
+.modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(2,6,23,.88);padding:30px;align-items:center;justify-content:center}.modal.open{display:flex}
+.modal-content{position:relative;width:min(900px,100%);max-height:90vh;overflow:auto;background:#111827;border:1px solid #334155;border-radius:18px;padding:20px}.modal-content img{width:100%;max-height:70vh;object-fit:contain;border-radius:10px;display:block}
+.modal-close{position:absolute;top:8px;right:14px;border:0;background:#0b1120;color:#fff;font-size:26px;cursor:pointer;width:40px;height:40px;border-radius:50%}.modal-title{color:#fff;margin:15px 5px 0}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.hero-layout,.about-grid,.gallery-intro{grid-template-columns:1fr}.hero-photo{width:min(300px,100%)}.skills-grid{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:250px 180px}.gallery-item:first-child{grid-row:auto;grid-column:1/3}}
+@media(max-width:700px){header{position:relative}nav{flex-direction:column;gap:15px;padding:20px 0}.menu{flex-wrap:wrap;justify-content:center;gap:12px 18px}.hero{min-height:auto;padding:80px 0}section{padding:70px 0}.projects-grid,.education-grid,.cert-list,.now-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}.about-mini{grid-template-columns:1fr}.gallery{grid-template-columns:1fr;grid-template-rows:repeat(3,240px)}.gallery-item:first-child{grid-column:auto;grid-row:auto}.hero p{font-size:16px}.section-title h2{font-size:30px}.modal{padding:15px}}
+@media(max-width:430px){.skills-grid{grid-template-columns:1fr}}
+</style>
 </head>
-
-
 <body>
 
-
-<!-- =========================
-     MENU
-========================== -->
-
-<header>
-
-    <div class="container">
-
-        <nav>
-
-            <a href="#inicio" class="logo">
-                Rayssa<span>.</span>
-            </a>
-
-            <ul class="menu">
-
-                <li>
-                    <a href="#sobre">Sobre</a>
-                </li>
-
-                <li>
-                    <a href="#habilidades">Habilidades</a>
-                </li>
-
-                <li>
-                    <a href="#projetos">Projetos</a>
-                </li>
-
-                <li>
-                    <a href="#formacao">Formação</a>
-                </li>
-
-                <li>
-                    <a href="#experiencia">Experiência</a>
-                </li>
-
-                <li>
-                    <a href="#contato">Contato</a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-
-<!-- =========================
-     INÍCIO
-========================== -->
+<header><div class="container"><nav>
+<a href="#inicio" class="logo">Rayssa<span>.</span></a>
+<ul class="menu">
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#jornada">Jornada</a></li>
+<li><a href="#habilidades">Conhecimentos</a></li>
+<li><a href="#projetos">Projetos</a></li>
+<li><a href="#galeria">Na prática</a></li>
+<li><a href="#formacao">Formação</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav></div></header>
 
 <main>
-
-<section class="hero" id="inicio">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <span class="tag">
-                EM TRANSIÇÃO PARA TECNOLOGIA
-            </span>
-
-            <h1>
-                Olá, eu sou<br>
-                <span>Rayssa Lima.</span>
-            </h1>
-
-            <h2>
-                Cibersegurança • Redes • Segurança da Informação
-            </h2>
-
-            <p>
-                Estudante de Análise e Desenvolvimento de Sistemas,
-                desenvolvendo conhecimentos em tecnologia com foco em
-                Cibersegurança, Redes e Segurança da Informação.
-            </p>
-
-            <div class="buttons">
-
-                <a href="#projetos" class="btn btn-primary">
-                    Ver meus projetos
-                </a>
-
-                <a href="https://github.com/Rayssallima"
-                   target="_blank"
-                   class="btn btn-secondary">
-                    GitHub
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     SOBRE
-========================== -->
-
-<section class="about" id="sobre">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <small>01 — Sobre mim</small>
-
-            <h2>Minha trajetória</h2>
-
-        </div>
-
-
-        <div class="about-grid">
-
-            <div class="about-card">
-
-                <p>
-                    Sou profissional da área de saúde com experiência
-                    profissional e estou em <span class="highlight">
-                    transição de carreira para Tecnologia</span>.
-                </p>
-
-                <p>
-                    Atualmente curso Análise e Desenvolvimento de
-                    Sistemas e venho direcionando minha formação para
-                    Segurança da Informação, Cibersegurança e Redes.
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <p>
-                    Minha experiência profissional contribuiu para o
-                    desenvolvimento de competências como análise de
-                    processos, organização, resolução de problemas,
-                    comunicação e trabalho em equipe.
-                </p>
-
-                <p>
-                    Busco constantemente aprender, desenvolver projetos
-                    e construir minha trajetória profissional na área
-                    de Tecnologia.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     HABILIDADES
-========================== -->
-
-<section id="habilidades">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <small>02 — Conhecimentos</small>
-
-            <h2>Habilidades</h2>
-
-            <p>
-                Conhecimentos que estou desenvolvendo durante minha
-                formação e transição para Tecnologia.
-            </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">🔐</div>
-
-                <h3>Cibersegurança</h3>
-
-                <p>
-                    Fundamentos de segurança da informação,
-                    proteção de dados e gestão de riscos.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">🌐</div>
-
-                <h3>Redes</h3>
-
-                <p>
-                    Fundamentos de redes de computadores,
-                    endereçamento IP e comunicação de redes.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">🖥️</div>
-
-                <h3>Cisco</h3>
-
-                <p>
-                    Estudos de redes e práticas utilizando
-                    ferramentas e conceitos Cisco.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">🗄️</div>
-
-                <h3>SQL</h3>
-
-                <p>
-                    Conhecimentos em desenvolvimento de consultas
-                    e fundamentos de banco de dados.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">🐍</div>
-
-                <h3>Python</h3>
-
-                <p>
-                    Estudos de programação e lógica utilizando Python.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">📊</div>
-
-                <h3>Power BI</h3>
-
-                <p>
-                    Estudos de análise e visualização de dados.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">💻</div>
-
-                <h3>Lógica</h3>
-
-                <p>
-                    Fundamentos de lógica de programação e
-                    resolução de problemas.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">🐙</div>
-
-                <h3>Git & GitHub</h3>
-
-                <p>
-                    Utilização do GitHub para organização e
-                    apresentação dos projetos.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     PROJETOS
-========================== -->
-
-<section class="projects" id="projetos">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <small>03 — Projetos</small>
-
-            <h2>Projetos e estudos</h2>
-
-            <p>
-                Projetos desenvolvidos durante minha formação em
-                Tecnologia.
-            </p>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-
-            <div class="project-card">
-
-                <span class="project-number">
-                    PROJETO 01
-                </span>
-
-                <h3>
-                    Laboratório de Redes — Cisco Packet Tracer
-                </h3>
-
-                <p>
-                    Laboratório de estudos voltado para configuração
-                    de redes, endereçamento IP, dispositivos de rede
-                    e comunicação entre hosts.
-                </p>
-
-                <span class="status">
-                    Em desenvolvimento
-                </span>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <span class="project-number">
-                    PROJETO 02
-                </span>
-
-                <h3>
-                    Estudos de SQL
-                </h3>
-
-                <p>
-                    Práticas de estudos relacionadas a banco de dados,
-                    consultas SQL e organização de informações.
-                </p>
-
-                <span class="status">
-                    Em desenvolvimento
-                </span>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <span class="project-number">
-                    PROJETO 03
-                </span>
-
-                <h3>
-                    Projetos em Python
-                </h3>
-
-                <p>
-                    Desenvolvimento de exercícios e projetos para
-                    praticar lógica de programação e fundamentos
-                    da linguagem Python.
-                </p>
-
-                <span class="status">
-                    Em desenvolvimento
-                </span>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <span class="project-number">
-                    PROJETO 04
-                </span>
-
-                <h3>
-                    Fundamentos de Cibersegurança
-                </h3>
-
-                <p>
-                    Estudos relacionados à Segurança da Informação,
-                    proteção de dados, análise de vulnerabilidades
-                    e gestão de riscos.
-                </p>
-
-                <span class="status">
-                    Em desenvolvimento
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     FORMAÇÃO
-========================== -->
-
-<section id="formacao">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <small>04 — Formação</small>
-
-            <h2>Formação acadêmica</h2>
-
-        </div>
-
-
-        <div class="education-grid">
-
-
-            <div class="education-card">
-
-                <h3>
-                    Análise e Desenvolvimento de Sistemas
-                </h3>
-
-                <div class="date">
-                    UniCesumar • 2026–2028
-                </div>
-
-                <p>
-                    Graduação em andamento, com formação direcionada
-                    ao desenvolvimento de conhecimentos em Tecnologia.
-                </p>
-
-            </div>
-
-
-            <div class="education-card">
-
-                <h3>
-                    Bacharelado em Nutrição
-                </h3>
-
-                <div class="date">
-                    Universidade São Miguel • Concluído em 2018
-                </div>
-
-                <p>
-                    Formação acadêmica anterior e experiência
-                    profissional que contribuem para minha trajetória
-                    de transição para Tecnologia.
-                </p>
-
-            </div>
-
-
-            <div class="education-card">
-
-                <h3>
-                    Pós-graduação em Nutrição Funcional
-                </h3>
-
-                <div class="date">
-                    Concluída
-                </div>
-
-            </div>
-
-
-            <div class="education-card">
-
-                <h3>
-                    Pós-graduação em Fitoterapia
-                </h3>
-
-                <div class="date">
-                    Concluída
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CERTIFICAÇÕES
-========================== -->
-
-<section class="certifications">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <small>05 — Cursos</small>
-
-            <h2>Certificações e cursos</h2>
-
-        </div>
-
-
-        <div class="cert-list">
-
-            <div class="cert-item">
-                <strong>Cisco — JA Mulher Digital</strong><br>
-                Cibersegurança — em andamento
-            </div>
-
-            <div class="cert-item">
-                <strong>SQL</strong><br>
-                Em andamento
-            </div>
-
-            <div class="cert-item">
-                <strong>Python</strong><br>
-                Em andamento
-            </div>
-
-            <div class="cert-item">
-                <strong>Power BI</strong><br>
-                Em andamento
-            </div>
-
-            <div class="cert-item">
-                <strong>Lógica de Programação</strong>
-            </div>
-
-            <div class="cert-item">
-                <strong>DIO — Trilhas de Tecnologia</strong>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     EXPERIÊNCIA
-========================== -->
-
-<section id="experiencia">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <small>06 — Experiência</small>
-
-            <h2>Experiência profissional</h2>
-
-            <p>
-                Experiência profissional que contribuiu para o
-                desenvolvimento de competências aplicáveis à minha
-                nova trajetória em Tecnologia.
-            </p>
-
-        </div>
-
-
-        <div class="experience-card">
-
-            <h3>
-                Nutricionista Clínica Hospitalar
-            </h3>
-
-            <div class="company">
-                Hospital ALFA • Abr/2020 – Jun/2022
-            </div>
-
-            <ul>
-
-                <li>
-                    Gestão e organização de processos operacionais
-                    e recursos.
-                </li>
-
-                <li>
-                    Acompanhamento de indicadores de qualidade,
-                    custos e produção.
-                </li>
-
-                <li>
-                    Controle e registro de informações, estoques
-                    e processos.
-                </li>
-
-                <li>
-                    Cumprimento e monitoramento de protocolos e
-                    normas de segurança.
-                </li>
-
-                <li>
-                    Identificação e resolução de problemas e
-                    melhoria de processos.
-                </li>
-
-                <li>
-                    Gestão de prioridades e trabalho em equipe.
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="experience-card">
-
-            <h3>
-                Nutricionista de UAN
-            </h3>
-
-            <div class="company">
-                Hospital IMIP • Nov/2019 – Jun/2020
-            </div>
-
-            <ul>
-
-                <li>
-                    Gestão e organização de processos operacionais
-                    e recursos.
-                </li>
-
-                <li>
-                    Acompanhamento de indicadores de qualidade,
-                    custos e produção.
-                </li>
-
-                <li>
-                    Controle e registro de informações, estoques
-                    e processos.
-                </li>
-
-                <li>
-                    Cumprimento e monitoramento de protocolos e
-                    normas de segurança.
-                </li>
-
-                <li>
-                    Identificação e resolução de problemas e
-                    melhoria de processos.
-                </li>
-
-                <li>
-                    Gestão de prioridades e trabalho em equipe.
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CONTATO
-========================== -->
-
-<section class="contact" id="contato">
-
-    <div class="container">
-
-        <div class="contact-content">
-
-            <div class="section-title">
-
-                <small>07 — Contato</small>
-
-                <h2>Vamos nos conectar?</h2>
-
-            </div>
-
-            <p>
-                Estou aberta a oportunidades, projetos e conexões
-                profissionais na área de Tecnologia e Cibersegurança.
-            </p>
-
-
-            <div class="contact-links">
-
-                <a
-                    href="https://github.com/Rayssallima"
-                    target="_blank"
-                    class="contact-link">
-                    GitHub
-                </a>
-
-
-                <a
-                    href="https://www.linkedin.com/in/lima-rayssa"
-                    target="_blank"
-                    class="contact-link">
-                    LinkedIn
-                </a>
-
-
-                <a
-                    href="mailto:rayssalaislima@gmail.com"
-                    class="contact-link">
-                    E-mail
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
+<section class="hero" id="inicio"><div class="container"><div class="hero-layout">
+<div class="hero-content reveal">
+<span class="tag">CONSTRUINDO MINHA JORNADA EM CIBERSEGURANÇA</span>
+<h1>Olá, eu sou<br><span>Rayssa Lima.</span></h1>
+<h2>Cibersegurança • Redes • Segurança da Informação</h2>
+<p>Sou estudante de Análise e Desenvolvimento de Sistemas e estou construindo minha transição para Cibersegurança por meio de estudos, laboratórios e projetos práticos.</p>
+<div class="buttons"><a href="#projetos" class="btn btn-primary">Conheça meus projetos</a><a href="https://github.com/Rayssallima" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a></div>
+<div class="hero-note">🔐 Aprender • Praticar • Construir • Evoluir</div>
+</div>
+<div class="hero-photo reveal"><img src="assets/rayssa-profissional.jpg" alt="Rayssa estudando com um tablet"></div>
+</div></div></section>
+
+<section class="about" id="sobre"><div class="container">
+<div class="section-title reveal"><small>01 — Quem sou eu</small><h2>Quem está por trás dessa jornada?</h2><p>Um pouco sobre mim, minha mudança de direção e o que estou construindo.</p></div>
+<div class="about-grid">
+<div class="about-photo reveal"><img src="assets/rayssa-retrato.jpg" alt="Retrato de Rayssa Lima"></div>
+<div class="about-card reveal">
+<p>Sou Rayssa e estou em <span class="highlight">transição de carreira para Cibersegurança e Segurança da Informação</span>.</p>
+<p>Minha jornada na tecnologia começou pelo interesse em entender como redes, sistemas e dispositivos se comunicam — e como podemos proteger essas estruturas e as informações que circulam nelas.</p>
+<p>Atualmente curso Análise e Desenvolvimento de Sistemas e venho desenvolvendo minha base em Redes, Cisco, Segurança da Informação, Python, SQL, Git e GitHub.</p>
+<p>Este portfólio não é apenas uma apresentação. É um espaço para mostrar o que estou aprendendo, praticando e construindo ao longo dessa jornada.</p>
+<div class="about-mini"><div class="mini-card"><strong>🎯 Foco</strong><span>Cibersegurança</span></div><div class="mini-card"><strong>🌐 Base</strong><span>Redes & Cisco</span></div><div class="mini-card"><strong>🚀 Método</strong><span>Projetos práticos</span></div></div>
+</div></div></div></section>
+
+<section id="jornada"><div class="container">
+<div class="section-title reveal"><small>02 — Minha jornada</small><h2>De onde vim e para onde estou indo</h2><p>Minha trajetória está mudando — e cada etapa faz parte da construção da próxima.</p></div>
+<div class="timeline">
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-card"><div class="year">2018</div><h3>🎓 Formação em Nutrição</h3><p>Uma etapa importante da minha formação acadêmica e profissional.</p></div></div>
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-card"><div class="year">2026</div><h3>💻 Início da graduação em ADS</h3><p>Começo de uma nova fase acadêmica e da minha transição para Tecnologia.</p></div></div>
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-card"><div class="year">2026</div><h3>🌐 Redes e Cisco</h3><p>Construção da base em redes, endereçamento, switches, roteadores e Cisco IOS.</p></div></div>
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-card"><div class="year">AGORA</div><h3>🔐 Cibersegurança</h3><p>Direcionamento dos estudos para Segurança da Informação, vulnerabilidades e projetos práticos.</p></div></div>
+</div></div></section>
+
+<section id="habilidades"><div class="container">
+<div class="section-title reveal"><small>03 — Conhecimentos</small><h2>O que estou aprendendo</h2><p>Conhecimentos em desenvolvimento durante minha formação e transição para Cibersegurança.</p></div>
+<div class="skills-grid">
+<div class="skill-card reveal"><div class="skill-icon">🔐</div><h3>Cibersegurança</h3><p>Fundamentos de Segurança da Informação, proteção de dados, riscos e vulnerabilidades.</p></div>
+<div class="skill-card reveal"><div class="skill-icon">🌐</div><h3>Redes</h3><p>TCP/IP, IPv4, IPv6, ARP, Ethernet, comunicação e endereçamento de redes.</p></div>
+<div class="skill-card reveal"><div class="skill-icon">🖥️</div><h3>Cisco</h3><p>Switches, roteadores, Cisco IOS e laboratórios com Packet Tracer.</p></div>
+<div class="skill-card reveal"><div class="skill-icon">🦈</div><h3>Wireshark</h3><p>Estudos de análise de tráfego e observação de protocolos de rede.</p></div>
+<div class="skill-card reveal"><div class="skill-icon">🐍</div><h3>Python</h3><p>Estudos de lógica, programação e desenvolvimento de scripts.</p></div>
+<div class="skill-card reveal"><div class="skill-icon">🗄️</div><h3>SQL</h3><p>Consultas, banco de dados e organização de informações.</p></div>
+<div class="skill-card reveal"><div class="skill-icon">🐙</div><h3>Git & GitHub</h3><p>Versionamento, organização e apresentação dos projetos.</p></div>
+<div class="skill-card reveal"><div class="skill-icon">📊</div><h3>Power BI</h3><p>Estudos de análise, organização e visualização de dados.</p></div>
+</div></div></section>
+
+<section class="projects" id="projetos"><div class="container">
+<div class="section-title reveal"><small>04 — Projetos</small><h2>O que estou construindo</h2><p>Projetos e laboratórios que mostram minha evolução na prática.</p></div>
+<div class="projects-grid">
+<article class="project-card reveal"><img class="project-image" src="assets/cisco-packet-tracer.png" alt="Topologia de laboratório no Cisco Packet Tracer"><div class="project-body"><span class="project-number">PROJETO 01</span><h3>Laboratório de Redes — Cisco Packet Tracer</h3><p>Laboratório prático de redes envolvendo dispositivos Cisco, endereçamento IP, switches, roteador e comunicação entre hosts.</p><div class="tags"><span class="tech-tag">Cisco Packet Tracer</span><span class="tech-tag">IPv4</span><span class="tech-tag">Switches</span><span class="tech-tag">Router</span><span class="tech-tag">Redes</span></div><span class="status">Em desenvolvimento</span><a href="https://github.com/Rayssallima" target="_blank" rel="noopener" class="project-link">Ver no GitHub →</a></div></article>
+<article class="project-card reveal"><div class="project-body"><span class="project-number">PROJETO 02</span><h3>Estudos de SQL</h3><p>Práticas de estudo relacionadas a banco de dados, consultas SQL e organização de informações.</p><div class="tags"><span class="tech-tag">SQL</span><span class="tech-tag">Banco de Dados</span></div><span class="status">Em desenvolvimento</span></div></article>
+<article class="project-card reveal"><div class="project-body"><span class="project-number">PROJETO 03</span><h3>Projetos em Python</h3><p>Exercícios e pequenos projetos para praticar lógica, programação e fundamentos de Python.</p><div class="tags"><span class="tech-tag">Python</span><span class="tech-tag">Lógica</span></div><span class="status">Em desenvolvimento</span></div></article>
+<article class="project-card reveal"><div class="project-body"><span class="project-number">PROJETO 04</span><h3>Fundamentos de Cibersegurança</h3><p>Estudos e futuros laboratórios voltados para Segurança da Informação, análise de vulnerabilidades e gestão de riscos.</p><div class="tags"><span class="tech-tag">Cibersegurança</span><span class="tech-tag">Segurança da Informação</span></div><span class="status">Em construção</span></div></article>
+</div></div></section>
+
+<section id="galeria"><div class="container">
+<div class="section-title reveal"><small>05 — Na prática</small><h2>Meu aprendizado acontecendo</h2><p>Nem tudo começa como um projeto pronto. Aqui estão alguns registros daquilo que estou estudando, praticando e construindo.</p></div>
+<div class="gallery-intro"><div class="gallery-text reveal"><h3>📸 Aprender também é experimentar.</h3><p>Quero que este espaço acompanhe minha evolução. Conforme novos laboratórios e projetos forem surgindo, esta galeria também cresce.</p></div><div class="gallery-text reveal"><h3>🔐 Próximo passo?</h3><p>Transformar cada estudo em prática e, aos poucos, construir projetos mais completos em Cibersegurança.</p></div></div>
+<div class="gallery">
+<div class="gallery-item reveal" onclick="openModal('assets/rayssa-profissional.jpg','Estudos e construção da minha nova trajetória')"><img src="assets/rayssa-profissional.jpg" alt="Rayssa estudando com um tablet"><div class="gallery-caption">Minha nova fase na Tecnologia</div></div>
+<div class="gallery-item reveal" onclick="openModal('assets/cisco-packet-tracer.png','Laboratório Cisco Packet Tracer')"><img src="assets/cisco-packet-tracer.png" alt="Laboratório Cisco Packet Tracer"><div class="gallery-caption">Laboratório Cisco</div></div>
+<div class="gallery-item reveal" onclick="openModal('assets/rayssa-retrato.jpg','Construindo minha identidade profissional')"><img src="assets/rayssa-retrato.jpg" alt="Retrato de Rayssa"><div class="gallery-caption">Quem está por trás dos projetos</div></div>
+</div></div></section>
+
+<section id="formacao"><div class="container">
+<div class="section-title reveal"><small>06 — Formação</small><h2>Minha formação</h2><p>Uma trajetória que está ganhando uma nova direção.</p></div>
+<div class="education-grid">
+<div class="education-card reveal"><h3>Análise e Desenvolvimento de Sistemas</h3><div class="date">UniCesumar • 2026–2028</div><p>Graduação em andamento, base acadêmica para minha nova trajetória em Tecnologia.</p></div>
+<div class="education-card reveal"><h3>Bacharelado em Nutrição</h3><div class="date">Universidade São Miguel • Concluído em 2018</div><p>Formação anterior que faz parte da minha história e da minha trajetória de mudança profissional.</p></div>
+<div class="education-card reveal"><h3>Pós-graduação em Nutrição Funcional</h3><div class="date">Concluída</div><p>Parte da minha formação acadêmica anterior.</p></div>
+<div class="education-card reveal"><h3>Pós-graduação em Fitoterapia</h3><div class="date">Concluída</div><p>Parte da minha formação acadêmica anterior.</p></div>
+</div></div></section>
+
+<section class="certifications"><div class="container">
+<div class="section-title reveal"><small>07 — Aprendizado</small><h2>Cursos e certificações</h2><p>Conhecimentos que estão formando minha base técnica.</p></div>
+<div class="cert-list">
+<div class="cert-item reveal"><strong>Cisco — JA Mulher Digital</strong><br>Cibersegurança — em andamento</div>
+<div class="cert-item reveal"><strong>Cisco Networking Academy</strong><br>Conceitos Básicos de Redes</div>
+<div class="cert-item reveal"><strong>Cisco Networking Academy</strong><br>Dispositivos de Rede e Configuração Inicial</div>
+<div class="cert-item reveal"><strong>SQL</strong><br>Em andamento</div>
+<div class="cert-item reveal"><strong>Python</strong><br>Em andamento</div>
+<div class="cert-item reveal"><strong>Power BI</strong><br>Em andamento</div>
+<div class="cert-item reveal"><strong>Lógica de Programação</strong></div>
+<div class="cert-item reveal"><strong>DIO — Trilhas de Tecnologia</strong></div>
+</div></div></section>
+
+<section class="now"><div class="container">
+<div class="section-title reveal"><small>08 — Agora</small><h2>O que estou construindo agora?</h2></div>
+<div class="now-card reveal"><p style="color:#cbd5e1">Minha prioridade é transformar conhecimento em prática e continuar construindo uma base sólida para atuar em Cibersegurança.</p>
+<div class="now-grid">
+<div class="now-item"><strong>🔐 Cibersegurança</strong><p>Aprofundando fundamentos e conceitos de Segurança da Informação.</p></div>
+<div class="now-item"><strong>🌐 Redes</strong><p>Praticando endereçamento, dispositivos e comunicação de redes.</p></div>
+<div class="now-item"><strong>🖥️ Cisco</strong><p>Desenvolvendo laboratórios no Packet Tracer.</p></div>
+<div class="now-item"><strong>🚀 Projetos</strong><p>Transformando estudos em evidências para meu portfólio.</p></div>
+</div></div></div></section>
+
+<section class="contact" id="contato"><div class="container"><div class="contact-content">
+<div class="section-title reveal"><small>09 — Contato</small><h2>Vamos nos conectar?</h2></div>
+<p class="reveal">Estou aberta a oportunidades, projetos e conexões profissionais na área de Cibersegurança e Segurança da Informação.</p>
+<div class="contact-links reveal">
+<a href="https://github.com/Rayssallima" target="_blank" rel="noopener" class="contact-link">GitHub</a>
+<a href="https://www.linkedin.com/in/lima-rayssa" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
+<a href="mailto:rayssalaislima@gmail.com" class="contact-link">E-mail</a>
+</div></div></div></section>
 </main>
 
+<footer><p>© 2026 Rayssa Lima • Cibersegurança & Tecnologia</p></footer>
 
+<div class="modal" id="imageModal" onclick="closeModal(event)">
+<div class="modal-content"><button class="modal-close" onclick="closeModal(event)" aria-label="Fechar">×</button><img id="modalImage" src="" alt=""><h3 id="modalTitle" class="modal-title"></h3></div>
+</div>
 
-<!-- =========================
-     RODAPÉ
-========================== -->
-
-<footer>
-
-    <p>
-        © 2026 Rayssa Lima • Tecnologia & Cibersegurança
-    </p>
-
-</footer>
-
-
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+function openModal(src,title){const m=document.getElementById('imageModal');document.getElementById('modalImage').src=src;document.getElementById('modalImage').alt=title;document.getElementById('modalTitle').textContent=title;m.classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(event){if(event.target.id==='imageModal'||event.target.classList.contains('modal-close')){document.getElementById('imageModal').classList.remove('open');document.body.style.overflow=''}}
+document.addEventListener('keydown',(event)=>{if(event.key==='Escape'){document.getElementById('imageModal').classList.remove('open');document.body.style.overflow=''}})
+</script>
 </body>
 </html>
